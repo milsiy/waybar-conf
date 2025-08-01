@@ -1,0 +1,107 @@
+{
+    "reload-style-on-change": true,
+
+    "layer": "top",
+
+    "modules-left": ["custom/shutdown", "custom/restart", "custom/logout"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": [
+        "custom/cava", "pulseaudio", "cpu", 
+        "memory", "network", "clock",
+    ],
+   
+    "custom/shutdown": {
+        "format": "SHUTDOWN",
+        "on-double-click": "shutdown now",
+        "tooltip": false,
+    },
+    "custom/restart": {
+        "format": "RESTART",
+        "on-double-click": "reboot",
+        "tooltip": false,
+    },
+    "custom/logout": {
+        "format": "LOGOUT",
+        "on-double-click": "hyprctl dispatch exit",
+        "tooltip": false,
+    },
+    // I'm not using this shit until hyprlock doesn't grant me the 
+    // "oops hyprlock died" screen anymore
+    // "custom/lock": {
+    //     "format": "LOCK",
+    //     "on-double-click": "hyprlock"
+    // },
+    // "custom/suspend": {
+    //     "format": "SUSPEND",
+    //     "on-double-click": "hyprlock & systemctl suspend"
+    // },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "ONE",
+            "2": "TWO",
+            "3": "THREE",
+            "4": "FOUR",
+            "5": "FIVE",
+            "6": "SIX", 
+            "7": "SEVEN", 
+            "8": "EIGHT", 
+            "9": "NINE", 
+            "10": "TEN", 
+            "11": "ELEVEN", 
+            "12": "TWELVE", 
+        },
+        "persistent-workspaces": { "*": 4 },
+    },
+
+    "custom/cava": {
+        "return-type": "json",
+        "exec": "/home/milkymilsy/.config/waybar/custom/wava.sh &",
+        "tooltip": true,
+        "hide-empty-text": true,
+        "max-length": 35,
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%d/%m/%y}",
+        "tooltip-format": "<tt><span font='Milsevka'>{calendar}</span></tt>",
+        "calendar": {
+            "mode": "month",
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "days": "<span color='#ffffff'>{}</span>",
+                "months": "<span color='#b9ca4a'>{}</span>",
+                "today": "<span color='#d54e53'><b><u>{}</u></b></span>",
+                "weeks": "<span color='#70c0b1'><b><i>W{}</i></b></span>",
+                "weekdays": "<span color='#e7c547'><b>{}</b></span>",
+            }
+        },
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "CPU {load:.2f}%",
+    },
+    "memory": {
+        "interval": 1,
+        "format": "RAM {used:.2f}GiB",
+        "tooltip-format": "{used:.2f}GiB / {total:.2f}GiB",
+    },
+    "network": {
+        "interface": "wlp0s20f0u2",
+        "interval": 1,
+        "format-wifi": "WIFI {signalStrength}%",
+        "format-ethernet": "ETHERNET",
+        "format-disconnected": "DISCONNECTED",
+        "tooltip-format-wifi": "{essid}",
+        "tooltip-format-ethernet": "{ifname}",
+    },
+    "pulseaudio": {
+        "format": "VOL {volume}%",
+        "format-bluetooth": "BT {volume}%",
+        "format-muted": " MUTED ",
+        "on-click": "pavucontrol",
+    },
+}

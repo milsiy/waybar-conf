@@ -1,0 +1,125 @@
+@keyframes blink {
+    to {
+        background: White;
+        color: black;
+    }
+}
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Milsevka;
+    font-weight: 600;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: White;
+}
+
+#workspaces {
+    background: Black;
+    margin: 5px 0px;
+    border-radius: 0px;
+}
+#workspaces button {
+    padding: 2px 8px;
+    color: White;
+    box-shadow: inset 0 0px transparent;
+}
+#workspaces button:hover,
+#workspaces button.active {
+    background: LightSkyBlue;
+    color: Black;
+    transition: none;
+}
+
+#custom-shutdown,
+#custom-restart,
+#custom-logout,
+#clock,
+#pulseaudio,
+#network {
+    background: Black;
+    padding: 0px 10px;
+    margin: 5px 0px;
+}
+
+#clock {
+    margin: 5px 0px;
+    color: LavenderBlush;
+    border-radius: 0px 2px 2px 0px;
+    margin-right: 5px;
+}
+
+#network {
+    color: Pink;
+    border-radius: 2px 0px 0px 2px;
+}
+
+#pulseaudio {
+    color: PeachPuff;
+    border-radius: 2px 2px 2px 2px;
+    margin-right: 3px;
+}
+
+#memory {
+    background: Black;
+    color: MediumAquamarine;
+    margin: 5px 0;
+    margin-right: 3px;
+    padding: 0 10px;
+    border-radius: 0px 2px 2px 0px;
+}
+
+#custom-cava {
+    background: Black;
+    color: LightCoral;
+    margin: 5px 0;
+    margin-right: 3px;
+    padding: 0 10px;
+    border-radius: 2px 2px 2px 2px;
+}
+
+#cpu {
+    margin: 5px 0;
+    padding: 0 10px;
+    background: Black;
+    color: MediumSlateBlue;
+    border-radius: 2px 0px 0px 2px;
+    /* margin-right: 3px; */
+}
+
+#custom-shutdown {
+    margin: 5px 5px;
+    margin-right: 3px;
+    background: Black;
+    color: IndianRed;
+}
+#custom-restart {
+    margin: 5px 0px;
+    margin-right: 3px;
+    background: Black;
+    color: PaleGreen;
+}
+#custom-logout {
+    margin: 5px 0px;
+    margin-right: 3px;
+    background: Black;
+    color: Khaki;
+}
+
+#custom-shutdown:hover {
+    background: IndianRed;
+    color: Black;
+}
+#custom-restart:hover {
+    background: PaleGreen;
+    color: Black;
+} 
+#custom-logout:hover {
+    background: Khaki;
+    color: Black; 
+}
